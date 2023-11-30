@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de treinos</title>
+ 
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+  />
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app.js">
+    <link rel="icon" type="imagex/png" href="alter.ico">
+</head>
+
+<header class="header-btn">
+    <button class="botao" onClick="window.print()">Imprimir </button>
+</header>
+
+<body>
+    <section class="menu">       
+        <div class="title">
+            <h2 class="titulo">Treino Semanal</h2>
+            <div class="underline"></div>
+        </div>
+    <div class="btn-filter">
+        <button id="mon">Segunda</button>
+        <button id="tue">Terça</button>
+        <button id="wed">Quarta</button>
+        <button id="thu">Quinta</button>
+        <button id="fri">Sexta</button>    
+    </div>
+
+         <div class="day" id="day1">
+            <h3>Dia 1: Segunda-feira</h3>
+            
+            <div class="exercise texto" id="ex11">
+                <img src="./images/agachamento-com-barra.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 1 - Agachamento</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Apoie o peso na região do trapézio e retire-o do suporte. 2) Com a coluna reta, estabilize o tronco, mantenha os pés paralelos aos ombros, as escápulas encaixadas para trás e o abdômen contraído. 3) Desça o tronco, flexione os joelhos e movimente o quadril para trás, durante esse movimento, o tronco se inclina para frente e a coluna permanece reta. 4) Eleve o tronco por meio da extensão dos joelhos, trazendo o quadril para frente. 5) Ao finalizar suas repetições, coloque a barra de volta ao seu suporte.
+                    </p>
+                    <button class="next" onclick="nextExercise('ex11', 'ex12')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex12">
+                <img src="./images/pernas-leg-press-45-tradicional.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 2 - Leg Press 45°</h4>
+                        <h4 class="number">4 x 10</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Comece sentado no aparelho e com os pés no centro da plataforma e paralelos aos ombros. 2) Estenda os joelhos, empurrando a plataforma para frente, e destrave o peso. 3) Segure as alças do aparelho para auxiliar a estabilização e deixe as costas e a lombar fixadas no banco. 4) Desça o peso cuidadosamente, flexionando os joelhos em aproximadamente 90º. 5) Empurre a plataforma para frente com a força das coxas até estender os joelhos. 6) Ao término do exercício, trave os pesos e saia do equipamento.
+                    </p>
+                    <button onclick="nextExercise('ex12', 'ex13')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex13">
+                <img src="./images/elevacao-de-panturillha-em-pe.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 3 - Panturrilha</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Comece em pé em cima de um bloco, posicione as pontas dos pés no objeto e mantenha as pernas paralelas aos ombros. 2) Pressione as pontas dos pés em cima do bloco, erguendo os calcanhares. 3) Faça uma pausa rápida, e retorne à posição inicial, alongando a panturrilha.                    </p>
+                    <button onclick="nextExercise('ex13', 'ex14')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex14">
+                <img src="./images/agachamento.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 4 - Agachamento livre</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Segure um halter em cada uma das duas mãos e deixe os braços estendidos à frente do corpo. 2) Em seguida, agache descendo o tronco devagar, até os joelhos formarem um ângulo de 90 graus em relação às coxas, e volte sem estendê-los totalmente. 3) Por fim, retorne à posição inicial para repetir o agachamento.
+                    </p>
+                    <button onclick="nextExercise('ex14', 'ex15')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex15">
+                <img src="./images/cadeira-extensora.gif" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 5 - Cadeira extensora</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Em primeiro lugar, regule o banco, de forma que a parte de trás do joelho esteja exatamente na região da dobra da cadeira e os pés devem estar apoiados nas almofadas na mesma linha do tornozelo. 2) Sentado na cadeira, as costas devem estar bem apoiadas e respeitando a curvatura fisiológica da coluna. 3) Iniciando o exercício, estenda os joelhos até a contração máxima do músculo. 4) Retorne de maneira controlada á posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex15', 'ex16')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex16">
+                <img src="./images/agachamento-no-rack.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 6 - Agachamento no Hack</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Suba na plataforma e encaixe os ombros abaixo do apoio almofadado. 2) Coloque suas mãos nas alças laterais e afaste seus pés na mesma distância entre seus ombros. Não esqueça de apoiar as costas e a cabeça no hack. 3) Por fim, olhe para a frente, coloque seus ombros para trás e estufe o peitoral. Em seguida, agache dobrando os joelhos em um ângulo de 90 graus. Retorne à posição inicial contraindo o quadríceps e repita o movimento até terminar a série.    </p>
+                    <button onclick="nextExercise('ex16', 'ex11')">TROCAR EXERCÍCIO</button>
+                </div>
+        </div>
+        </div>
+    
+    
+        <div class="day" id="day2">
+            <h3>Dia 2: Terça-feira</h3>
+    
+            <div class="exercise" id="ex21">
+                <img src="./images/costas-puxada-aberta-1.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 1 - Puxada pulley</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Na máquina pulley, segure a barra com uma pegada aberta, em uma distância maior que a largura dos ombros. 2) Com os braços estendidos, leve o tronco para trás formando um ângulo em torno de 30º, ao mesmo tempo em que cria uma leve curvatura na região lombar e estufe o peito. 3) Exale o ar e traga a barra para baixo. Ao atingir a posição de contração total, comprima os músculos das costas. 4) Segure a posição contraída por um segundo, comprimindo as escápulas. 5) Levante a barra lentamente, inalando o ar, até que os braços estejam totalmente estendidos.
+                     </p>
+                     <button onclick="nextExercise('ex21', 'ex22')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex22">
+                <img src="./images/remada-sentado.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 2 - Remada sentado</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Sente-se na máquina de cabos e prenda o triângulo. 2) Estique os braços para pegar o acessório, puxando-o em direção à parte inferior do peitoral. 3) Volte com o acessório à posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex22', 'ex23')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex23">
+                <img src="./images/remada-curvada.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 3 - Remada curvada</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Para começar, fique em pé, com as pernas afastadas e os joelhos flexionados. 2) Segure a barra com as mãos paralelas aos ombros e com as palmas viradas para a frente. 3) Deixe a coluna reta e encaixe os ombros, incline o tronco para a frente, jogando o quadril para trás. 4) Mantenha os cotovelos estendidos até que a barra fique na altura das coxas, e contraia os bíceps. 5) Puxe a barra até a cintura, ao mesmo tempo em que flexiona os cotovelos. 6) Segure a contração por um momento e retorne à posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex23', 'ex24')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+
+            <div class="exercise" id="ex24">
+                <img src="./images/costas-barra-fixa.gif" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 4 - Barra fixa</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Primeiro, segure a barra, com as mãos próximas, se pendure nela e cruze os pés. 2) Então, aperte as escápulas dos ombros para baixo e para trás, dobre os cotovelos e puxe a parte de cima do peito em direção à barra. 3) Em seguida, faça uma pausa e retorne lentamente à posição original.
+                    </p>
+                    <button onclick="nextExercise('ex24', 'ex25')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex25">
+                <img src="./images/costas-remada-banco.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 5 - Remada serrote</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">1) Para começar, coloque um halter em cada lado de um banco reto. Em seguida, coloque as pernas em cima do banco, encostando o joelho e incline tronco para a frente. 2) Depois, coloque uma das mãos no banco para obter suporte e pegue um halter com a outra mão. 3) Então, leve o peso para cima, até a lateral do peito. Flexione o cotovelo e mantenha o tronco imóvel. 4) Depois, desça o halter e volte à posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex25', 'ex21')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="day" id="day3">
+            <h3>Dia 3: Quarta-feira</h3>
+    
+            <div class="exercise" id="ex31">
+                <img src="./images/voador-no-aparelho.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 1 - Peck deck</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Sente-se na máquina com as costas retas no suporte do equipamento. 2) Segure as alças de modo que os antebraços fiquem paralelos ao chão. 3) Movimente as alças para o centro de modo devagar, aproximando os braços e levando-os para o centro, ao mesmo tempo em que comprime o peito no meio e exala o ar. 4) Segure a contração por um segundo e volte lentamente ao posicionamento original até que o peito esteja completamente alongado, ao mesmo tempo em que inala o ar.
+                    </p>
+                    <button onclick="nextExercise('ex31', 'ex32')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex32">
+                <img src="./images/supino-reto.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 2 - Supino reto</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Deite-se em um banco reto. 2) Os joelhos devem estar flexionados, os pés firmes no suporte ou chão e as costas levemente arqueadas. 3) Pegue a barra com as mãos posicionadas em uma distância maior do que a largura dos ombros. 4) Retire o peso do suporte, segurando-o na linha do peito com os cotovelos estendidos. 5) Desça a barra até o peito de maneira controlada com os punhos retos, fazendo o movimento de flexão dos cotovelos para baixo. 6) Faça uma pequena pausa e empurre a barra para cima. 7) Ao finalizar as repetições, devolva a barra ao suporte.
+                    </p>
+                    <button onclick="nextExercise('ex32', 'ex33')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex33">
+                <img src="./images/triceps-corda.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 3 - Tríceps corda</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Prenda uma corda a uma polia alta no equipamento de cabo e segure-a com uma pegada neutra. 2) Fique em pé, com o tronco reto e uma ligeiramente inclinado para frente. Os antebraços devem estar TROCAR EXERCÍCIOs ao corpo e perpendiculares ao chão. 3) Use o tríceps para abaixar a corda, levando cada lado do acessório até as coxas, ao mesmo tempo em que exala o ar. 4) Segure a posição contraída durante um segundo e lentamente erga a corda, retornando ao posicionamento original, ao mesmo tempo em que exala o ar.
+                    </p>
+                    <button onclick="nextExercise('ex33', 'ex34')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            
+            <div class="exercise" id="ex34">
+                <img src="./images/triceps-nuca.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 4 - Tríceps francês</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Posicione-se em pé com os pés afastados em uma largura equivalente à largura dos ombros. 2) Segure um halter em cada uma das mãos e estender os braços para cima, sobre a cabeça, com uma palma da mão voltada para a outra. 3) Flexione os cotovelos e abaixe o haltere, colocando-o atrás da cabeça, de modo que ele fique perpendicular ao chão. 4) Pause brevemente e estenda os braços, levando o halter sob a cabeça e retornando à posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex34', 'ex35')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex35">
+                <img src="./images/paralelas.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 5 - Paralelas francês</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Coloque a caneleira ou o cinto com o peso. 2) Segure-se nos apoios do aparelho e erga o corpo até que os braços estejam alinhados e o corpo possa descer em linha reta. 3) Então, flexione levemente os joelhos e dobre os cotovelos, descendo o corpo até que a parte superior dos braços esteja paralela ao chão. Com os braços, erga o corpo novamente e retorne ao posicionamento original.
+                    </p>
+                    <button onclick="nextExercise('ex35', 'ex31')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="day" id="day4">
+            <h3>Dia 4: Quinta-feira</h3>
+    
+            <div class="exercise" id="ex41">
+                <img src="./images/deadlift.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 1 - Deadlift</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Com a coluna vertebral reta e os cotovelos bloqueados, levante a barra até o nível dos quadris. 2)Depois, devolva lentamente a barra ao solo, retornando à posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex41', 'ex42')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex42">
+                <img src="./images/avanco.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 2 - Passada </h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Fique em pé, com os pés afastados na largura dos ombros, segure um haltere fixo em cada mão e deixe os braços estendidos ao lado do corpo. 2) Leve um pé mais para a frente e flexione o joelho dessa perna em 90º. 3) Retorne à posição inicial, trazendo o pé de trás para a frente. Na próxima repetição, alterne o pé que fica na parte da frente do corpo. 4) Quando o corpo for projetado para frente, o tronco deve ficar reto e o peso do corpo deve ficar na perna que avançou.
+                    </p>
+                    <button onclick="nextExercise('ex42', 'ex43')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex43">
+                <img src="./images/coice.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 3 - Coice no cabo</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Abaixe a alça do cabo até a altura do tornozelo. 2) Posicione-se em pé, de frente para a máquina com os pés a uma distância equivalente à largura dos quadris. 3) Prenda um dos pés na alça do cabo e segure a máquina com uma das mãos. 4) Com o peito elevado, use os glúteos para puxar o cabo, levando o pé preso na alça para trás. 5) Após fazer uma pausa, retorne à posição original e troque de pé.
+                    </p>
+                    <button onclick="nextExercise('ex43', 'ex44')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex44">
+                <img src="./images/pernas-na-maquina.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 4 - Flexão de pernas deitado</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Comece ajustando a máquina de acordo com a sua altura. 2) Então, arrume seu posicionamento para iniciar o exercício. Deixe os pés separados entre si por alguns centímetros, deite de barriga para baixo apoiando o tronco na parte de cima do banco e as coxas na parte inferior. 3) Coloque as mãos nos apoios laterais e, enfim, ajuste a carga desejada. 4) Solte o ar enquanto levanta a barra com as pernas em direção aos glúteos. Faça uma pausa no topo. Inspire o ar voltando lentamente para a posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex44', 'ex41')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="day" id="day5">
+            <h3>Dia 5: Sexta-feira</h3>
+    
+            <div class="exercise" id="ex51">
+                <img src="./images/desenvolvimento.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 1 - Desenvolvimento</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Sente-se em um banco com as costas retas, segure um haltere em cada mão na altura dos ombros e com os cotovelos dobrados. 2) Em seguida, leve os halteres para cima no sentido vertical até esticar os braços. 3) Movimente os halteres para baixo, na altura dos ombros.
+                    </p>
+                    <button onclick="nextExercise('ex51', 'ex52')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex52">
+                <img src="./images/elevacao-lateral.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 2 - Elevação lateral</h4>
+                        <h4 class="number">4 x 12</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Fique em pé e posicione os seus pés paralelos aos ombros. 2) Segure um halter em cada mão, na altura das coxas e deixe os cotovelos levemente flexionados. 3) Eleve os halteres lateralmente, fazendo o movimento de abdução dos ombros, até os braços ficarem paralelos ao chão. 4) Contraia bem os músculos e desça lentamente os halteres e volte à posição original.
+                    </p>
+                    <button onclick="nextExercise('ex52', 'ex53')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            <div class="exercise" id="ex53">
+                <img src="./images/remada-alta.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 3 - Remada alta</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Comece em pé e segure um halter em cada mão, com as palmas para frente. 2) Deixe os braços estendidos ao lado do corpo e os cotovelos levemente dobrados. 3) No início, os halteres ficam apoiados nas coxas, em seguida, levante os halteres com a lateral dos ombros, flexionando os cotovelos e exale o ar durante o movimento. 4) O movimento termina quando os halteres quase tocarem o queixo. 5) Logo depois, pare por uma segundo nessa posição e então volte devagar à posição inicial.
+                    </p>
+                    <button onclick="nextExercise('ex53', 'ex54')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+            
+            <div class="exercise" id="ex54">
+                <img src="./images/ombros-desenvolvimento-arnold-para-ombros.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 4 - Desenvolvimento Arnold</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Primeiro, sente-se em um banco com encosto e segure um haltere em cada uma das mãos, com as palmas viradas para você. 2) Em seguida, com as escápulas travadas para trás, flexione os cotovelos e leve os pesos em direção ao peito, com os antebraços na posição vertical. 3) Na sequência, utilize a força dos músculos dos ombros para empurrar os pesos para cima ao mesmo tempo em que gira as palmas das mãos para a frente. 4) Depois, quando atingir a parte alta do movimento, os cotovelos devem estar estendidos, com os halteres próximos um do outro e posicionados acima da cabeça, com as palmas das mãos direcionadas para fora. 5) Então, faça uma pequena pausa na parte alta do exercício e desça os pesos controladamente, com o movimento inverso ao da subida.
+                    </p>
+                    <button onclick="nextExercise('ex54', 'ex55')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+
+            <div class="exercise" id="ex55">
+                <img src="./images/ombros-voador-invertido-na-maquina.webp" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Exercício 5 - Voador invertido</h4>
+                        <h4 class="number">4 x 15</h4>
+                        <h4 class="descanso" >60</h4>  
+                    </header>
+                    <p class="item-text">
+                        1) Antes de começar, ajuste as alças da máquina e o banco a fim de que as alças estejam na altura dos ombros. 2) Em seguida, pegue as alças do aparelho com as palmas das mãos voltadas para dentro e em um movimento semicircular puxe-as em um sentido lateral e para trás, contraindo o deltoide posterior. Os braços devem permanecer levemente dobrados durante o exercício e todo o movimento deve ocorrer na articulação dos ombros. 3) Depois, pause o movimento na parte traseira por alguns instantes, e então retorne lentamente à posição original.
+                    </p>
+                    <button onclick="nextExercise('ex55', 'ex51')">TROCAR EXERCÍCIO</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+    <script src="app.js"></script>
+    <footer>
+        <p class="footer">Copyright @2023 | All Rights Reserved</p>
+    </footer>
+</body>
+
+
+</html>
